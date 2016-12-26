@@ -4,7 +4,6 @@ jQuery.get(public_key_file, function(data) {
 	});
 }
 function run(pubkey) {
-	'use strict';
     if (window.crypto.getRandomValues) {  
         if ($('#button').html() === "Encrypt") {
 			var openpgp = typeof window !== 'undefined' && window.openpgp ? window.openpgp : require('openpgp.min');
