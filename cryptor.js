@@ -1,4 +1,8 @@
-function encrypt() { 
+function encrypt(public_key_file) {
+/* //jquery can load a publickey from file name, I only got this to work when I ran it on a real server
+jQuery.get(public_key_file, function(data) {
+    run(data);
+});*/
 var pub_key =
   ['-----BEGIN PGP PUBLIC KEY BLOCK-----',
   'Version: GnuPG v2.0.19 (GNU/Linux)',
@@ -23,7 +27,7 @@ var pub_key =
   'hz3tYjKhoFTKEIq3y3Pp',
   '=h/aX',
   '-----END PGP PUBLIC KEY BLOCK-----'].join('\n');
-	run(pub_key);
+run(pub_key);
 }
 function run(pubkey) {
     if (window.crypto.getRandomValues) {  
