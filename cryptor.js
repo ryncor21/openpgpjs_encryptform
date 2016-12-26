@@ -7,8 +7,8 @@ function run(pubkey) {
 	'use strict';
     if (window.crypto.getRandomValues) {  
         if ($('#button').html() === "Encrypt") {
-			var openpgp = typeof window !== 'undefined' && window.openpgp ? window.openpgp : require('https://github.com/openpgpjs/openpgpjs/blob/master/dist/openpgp.min.js');
-			openpgp.initWorker({ path:'https://github.com/openpgpjs/openpgpjs/blob/master/dist/openpgp.worker.min.js' });
+			var openpgp = typeof window !== 'undefined' && window.openpgp ? window.openpgp : require('openpgp.min');
+			openpgp.initWorker({ path:'openpgp.worker.min.js' });
 			openpgp.config.aead_protect = false;
 			var options = {
     			data: $('#input').val(),
